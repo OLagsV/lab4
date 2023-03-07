@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        Pizza[] all_pizzas = {
+        /**Pizza[] all_pizzas = {
                 new Pepperoni("Маленькая пепперони",18.55, 300, 20, 150.33, true),
                 new Pepperoni("Средняя пепперони",23.50, 450, 25, 180.46, true),
                 new Pepperoni("Большая пепперони", 27.19, 600, 30, 240.04, true),
@@ -28,6 +28,34 @@ public class Main {
         for (Pizza pizza : all_pizzas) {
             if (pizza.diameter > diameter) {
                 System.out.println("Информация о пиццах диаметр которых больше заданного:\n" + pizza.getInfo());
+            }
+        }**/
+        Boolean isStart = true;
+        while (isStart){
+            ExtraRepClass taskExample = new ExtraRepClass();
+            System.out.println("Выберите действие:");
+            System.out.println("1 - Добавить пиццы.");
+            System.out.println("2 - Получить информацию о пицце.");
+            System.out.println("3 - Обновить информацию о пицце.");
+            System.out.println("4 - Удалить пиццу.");
+            System.out.println("5 - Завершить процесс.");
+            Scanner actionNumber = new Scanner(System.in);
+            int userAction = actionNumber.nextInt();
+            switch (userAction){
+                case (1):
+                    taskExample.addPizza();
+                    break;
+                case (2):
+                    taskExample.getPizzas();
+                    break;
+                case(3):
+                    taskExample.updatePizzaInfo();
+                    break;
+                case(4):
+                    taskExample.deletePizza();
+                    break;
+                case(5):
+                    isStart = false;
             }
         }
     }
